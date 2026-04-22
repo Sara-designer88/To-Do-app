@@ -2,8 +2,7 @@ const footerStyle = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-evenly",
-  position: "fixed",
-  heigth:"20px"
+  
 };
 
 function Footer() {
