@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const NavbarStyle = {
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "coloum",
   justifyContent: "space-evenly",
   
 };
@@ -9,7 +11,13 @@ function Navbar() {
   return (
     <div style={NavbarStyle}>
       <img src="./src/assets/logo.png" alt="my logo" width="100px" />
-     <h1> Hello to my first to do App</h1>   
+      <nav>
+        <Link to="/">Home</Link>
+        <br />
+        <Link to="/about">About</Link>
+        <br />
+        <Link to="/user-list">To Do List</Link>
+      </nav>
     </div>
   );
 }

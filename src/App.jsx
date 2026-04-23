@@ -5,20 +5,34 @@ import heroImg from './assets/hero.png'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
-import Data from './components/Data'
+
+import { Routes, Route, Link } from "react-router-dom"
 
 import './App.css'
-
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ItemDetailsPage from './pages/ItemDetailsPage'
+import DashboardPage from './pages/DashboardPage'
+import NotFoundPage from './pages/NotFoundPage'
 function App() {
 
 
   return (
     <>
+    <Navbar />
+      <Routes>
+        <Route path={"/"} element={<HomePage/>}/>
+        <Route path={"/about"} element={<AboutPage/>}/>
+        <Route path={"/user-list"} element={<DashboardPage/>}/>
+        <Route path={"/ItemDetailsPage"} element={<ItemDetailsPage/>}/>
+        <Route path={"*"} element={<NotFoundPage/>}/>
+
+        
+      </Routes>
     <div>
-         <Navbar />
+         
          <Sidebar />
          <Footer />
-         <Data/>
     </div>
      
     </>

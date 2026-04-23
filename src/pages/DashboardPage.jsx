@@ -1,7 +1,7 @@
 import dataInfo from "../data/data.json";
 import { useState } from "react";
 
-function Data() {
+function DashboardPage() {
   const [stateData, setStateData] = useState(dataInfo);
   const handleRemoveFromData =(index)=> {
     console.log("trying to remove", index )
@@ -22,4 +22,4 @@ function Data() {
   );
 }
 
-export default Data;
+export default DashboardPage;
