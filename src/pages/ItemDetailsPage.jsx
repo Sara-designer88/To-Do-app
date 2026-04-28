@@ -1,35 +1,59 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "./../data/data.json"
-
-
-
 
 function ItemDetailsPage(props) {
+  const params = useParams();
+  const foundTodo = props.stateData[params.index];
 
-  const params = useParams()
-  console.log(params)
+  const [isEditing, setIsEditing] = useState(false);
+  const [title, setTitle] = useState(foundTodo.task);
+  const [description, setDescription] = useState(foundTodo.description);
+
+  const handleUpdate = () => {
+    setIsEditing(false);
+    const clone = structuredClone(props.stateData)
+    clone[params.index].task = title
+    clone[params.index].description = description
+    props.setStateData(clone) 
+    console.log(clone[params.index])
+  };
   
-  const foundTodo = props.stateData[params.index]
+  /*
+  1. clone the original Array
+  2. call that specific 
+  3.index and edit that
+  4. update the states via the setState 
+  */
+
 
   return (
     <div>
-      <h1>
-      Todo Details Page
-      </h1>
-      <button> Edit </button>
- <div>
-      
-      <h4>Showing Todo Description </h4>
+      <h1>Todo Details Page</h1>
 
-      <h5>Title: {foundTodo.task} </h5>
-      <p>Description: {foundTodo.description} </p>
-      <p>completed: {foundTodo.completed}</p>
-      
+      <h4>Showing Todo Description</h4>
 
-      </div>
-
+      {isEditing ? (
+        <>
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <button onClick={handleUpdate}>Save</button>
+        </>
+      ) : (
+        <>
+          <h5>Title: {title}</h5>
+          <p>Description: {description}</p>
+          <p>Completed: {foundTodo.completed ? "Yes" : "No"}</p>
+          <button onClick={() => setIsEditing(true)}>Edit</button>
+        </>
+      )}
     </div>
-    
-  )
+  );
 }
-export default ItemDetailsPage
+
+export default ItemDetailsPage;

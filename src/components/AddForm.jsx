@@ -4,6 +4,7 @@ import ItemDetailsPage from "../pages/ItemDetailsPage"
 function AddForm(props) {
  const [todoInputValue, setTodoInputValue] = useState("")
   const [todoDescriptionInputValue, setTodoDescriptionInputValue] = useState("")
+  const [todoIdInputValue, setTodoIdInputValue] = useState("")
 
   const handleTodoChange = (event) => {
     console.log("user typing something")
@@ -14,6 +15,11 @@ function AddForm(props) {
     console.log("user typing something")
     setTodoDescriptionInputValue(event.target.value)
   }
+
+  const handleTodoIdChange = (event) => {
+    console.log("user typing something")
+    setTodoIdInputValue(event.target.value)
+  }
   
     const addNewTodo = (event) => {
     event.preventDefault() 
@@ -22,7 +28,8 @@ function AddForm(props) {
     const newTodo = {
       task: todoInputValue,
       description:todoDescriptionInputValue,
-      completed: false
+      completed: false,
+      id: todoIdInputValue
     }
     console.log(newTodo)
    
@@ -51,7 +58,8 @@ function AddForm(props) {
           <br/>
           <label htmlFor="name"> Todo Description: </label>
           <input onChange={handleTodoDescriptionChange} value={todoDescriptionInputValue} type="text" name="name"/>
-        </div>
+          <br/>
+          </div>
 
 
         <button onClick={addNewTodo}>Add</button>

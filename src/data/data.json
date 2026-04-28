@@ -1,11 +1,9 @@
 [
-  { "task": "Read the project brief", "description":"Understand the project goals, requirements, and deliverables before starting any work." ,"completed": true},
-  { "task": "Create a project repository" , "description":"Set up a Git repository to track changes and collaborate on the codebase.", "completed": false},
-  { "task": "Create React application using Vite" , "description":"Bootstrap the frontend app with Vite for fast development and optimized builds.", "completed": false},
-  { "task": "Finish Day 1 Development Tasks" , "description":"Complete all scheduled coding and implementation tasks planned for the first day.", "completed": false},
-  { "task": "Finish Day 1 Research Tasks" , "description":"", "completed": false},
-  { "task": "Finish Day 2 Development Tasks" , "description":"", "completed": false},
-  { "task": "Finish Day 2 Research Tasks" , "description":"", "completed": false}
+  { "id": "4827", "task": "Read the project brief", "description": "Understand the project goals, requirements, and deliverables before starting any work.", "completed": true },
+  { "id": "1593", "task": "Create a project repository", "description": "Set up a Git repository to track changes and collaborate on the codebase.", "completed": false },
+  { "id": "7264", "task": "Create React application using Vite", "description": "Bootstrap the frontend app with Vite for fast development and optimized builds.", "completed": false },
+  { "id": "0381", "task": "Finish Day 1 Development Tasks", "description": "Complete all scheduled coding and implementation tasks planned for the first day.", "completed": false },
+  { "id": "9056", "task": "Finish Day 1 Research Tasks", "description": "Investigate libraries, patterns, and references needed to support Day 1 development work.", "completed": false },
+  { "id": "3712", "task": "Finish Day 2 Development Tasks", "description": "Complete all scheduled coding and implementation tasks planned for the second day.", "completed": false },
+  { "id": "6849", "task": "Finish Day 2 Research Tasks", "description": "Explore additional resources, documentation, and examples needed to support Day 2 development.", "completed": false }
 ]
-
-
