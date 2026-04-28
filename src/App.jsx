@@ -16,7 +16,13 @@ import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import dataInfo from "./data/data.json"
+
+
 function App() {
+
+  const [stateData, setStateData] = useState(dataInfo);
+
   return (
     <>
       <div id="root">
@@ -24,8 +30,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path={"/about"} element={<AboutPage />} />
-            <Route path={"/user-list"} element={<DashboardPage />} />
-            <Route path={"/ItemDetailsPage"} element={<ItemDetailsPage />} />
+            <Route path={"/user-list"} element={<DashboardPage stateData={stateData} setStateData={setStateData} />} />
+            <Route path={"/pages/:index"} element={<ItemDetailsPage  stateData={stateData} setStateData={setStateData} />} />
             {/* <Route path={"*"} element={<NotFoundPage />} /> */}
           </Routes>
           {/* <aside className="sidebar">

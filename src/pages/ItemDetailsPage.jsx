@@ -7,14 +7,16 @@ import data from "./../data/data.json"
 function ItemDetailsPage(props) {
 
   const params = useParams()
-
-  const foundTodo = props.stateData.find((todo) => { return todo.task === params.task })
+  console.log(params)
+  
+  const foundTodo = props.stateData[params.index]
 
   return (
     <div>
       <h1>
       Todo Details Page
       </h1>
+      <button> Edit </button>
  <div>
       
       <h4>Showing Todo Description </h4>

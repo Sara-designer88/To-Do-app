@@ -1,4 +1,4 @@
-import dataInfo from "../data/data.json";
+
 import { useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import CloseButton from 'react-bootstrap/CloseButton';
@@ -6,15 +6,15 @@ import AddForm from "../components/AddForm";
 import { Link } from "react-router-dom";
 
 
-function DashboardPage() {
+function DashboardPage(props) {
   
-  const [stateData, setStateData] = useState(dataInfo);
+
   const handleRemoveFromData = (index) => {
     console.log("trying to remove", index);
 
-    const clone = structuredClone(stateData);
+    const clone = structuredClone(props.stateData);
     clone.splice(index, 1);
-    setStateData(clone);
+    props.setStateData(clone);
   };
 
 
@@ -24,12 +24,12 @@ function DashboardPage() {
    
     <div>
        
-       <AddForm stateData={stateData} setStateData={setStateData}/>
+       <AddForm stateData={props.stateData} setStateData={props.setStateData}/>
 
-      {stateData.map((ToDo, index) => {
+      {props.stateData.map((ToDo, index) => {
         return (
           <ListGroup>
-             <Link to={`/pages/${ToDo.task}`}>
+             <Link to={`/pages/${index}`}>
             
             <ListGroup.Item
               key={index}
