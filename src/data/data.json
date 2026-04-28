@@ -1,9 +1,11 @@
 [
-  { "task": "Read the project brief", "completed": true},
-  { "task": "Create a project repository", "completed": false},
-  { "task": "Create React application using Vite", "completed": false},
-  { "task": "Finish Day 1 Development Tasks", "completed": false},
-  { "task": "Finish Day 1 Research Tasks", "completed": false},
-  { "task": "Finish Day 2 Development Tasks", "completed": false},
-  { "task": "Finish Day 2 Research Tasks", "completed": false}
+  { "task": "Read the project brief", "description":"Understand the project goals, requirements, and deliverables before starting any work." ,"completed": true},
+  { "task": "Create a project repository" , "description":"Set up a Git repository to track changes and collaborate on the codebase.", "completed": false},
+  { "task": "Create React application using Vite" , "description":"Bootstrap the frontend app with Vite for fast development and optimized builds.", "completed": false},
+  { "task": "Finish Day 1 Development Tasks" , "description":"Complete all scheduled coding and implementation tasks planned for the first day.", "completed": false},
+  { "task": "Finish Day 1 Research Tasks" , "description":"", "completed": false},
+  { "task": "Finish Day 2 Development Tasks" , "description":"", "completed": false},
+  { "task": "Finish Day 2 Research Tasks" , "description":"", "completed": false}
 ]
+
+

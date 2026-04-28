@@ -1,16 +1,15 @@
-const footerStyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-evenly",
-  
-};
+import { Link } from "react-router-dom";
+
+
 
 function Footer() {
   return (
-    <div style={footerStyle}>
+    <div id="footerStyle">
         <> @2026</>
+
        
-      <a href="https://github.com/Sara-designer88/To-Do-app.git">GitHub</a>
+        <b><Link to="/about">About Us</Link></b>
+        <b><a href="https://github.com/Sara-designer88/To-Do-app.git">GitHub/Project</a> </b>
   
     </div>
   );
