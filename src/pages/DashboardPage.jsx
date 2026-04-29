@@ -28,25 +28,23 @@ function DashboardPage(props) {
 
       {props.stateData.map((ToDo, index) => {
         return (
-          <ListGroup>
+          <ListGroup key={index} horizontal > 
              <Link to={`/pages/${index}`}>
             
             <ListGroup.Item
-              key={index}
               action
               href="#link1"
               style={{
-                backgroundColor: ToDo.completed ? "green" : "orange",
+                backgroundColor: ToDo.completed ? "rgb(18, 163, 105) " : "rgb(137, 213, 210)",
               }}
             >
               {ToDo.task}
-      
-              <button onClick={() => handleRemoveFromData(index)}>
-                ❌
-               </button>
              
             </ListGroup.Item>
             </Link>
+              <button id="delete-btn" onClick={() => handleRemoveFromData(index)}>
+                ❌
+               </button>
           </ListGroup>
         );
       })}

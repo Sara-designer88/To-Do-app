@@ -27,30 +27,34 @@ function ItemDetailsPage(props) {
 
 
   return (
-    <div>
-      <h1>Todo Details Page</h1>
+    <div className="container">
+      <h1 >Todo Details Page</h1>
 
-      <h4>Showing Todo Description</h4>
+   
 
       {isEditing ? (
-        <>
-          <input
+        <div className="edit-form">
+          <label htmlFor="title">Title: </label>
+          <input 
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            name="title"
           />
+          <label htmlFor="description">Description: </label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            name="description"
           />
-          <button onClick={handleUpdate}>Save</button>
-        </>
+          <button id="save-button" onClick={handleUpdate}>Save</button>
+        </div>
       ) : (
-        <>
-          <h5>Title: {title}</h5>
-          <p>Description: {description}</p>
-          <p>Completed: {foundTodo.completed ? "Yes" : "No"}</p>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-        </>
+        <div className="todo-details">
+          <p><h5> Title: {title}</h5></p>
+          <p><b> Description: </b>{description}</p>
+          <p><b> Completed: </b>{foundTodo.completed ? "Yes" : "No"}</p>
+          <button id="edit-button" onClick={() => setIsEditing(true)}>Edit</button>
+        </div>
       )}
     </div>
   );

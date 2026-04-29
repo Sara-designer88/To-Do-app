@@ -53,16 +53,16 @@ function AddForm(props) {
       <form>
 
         <div>
-          <label htmlFor="name"> Todo title: </label>
+          <label htmlFor="name"> Todo Title Name : </label>
           <input onChange={handleTodoChange} value={todoInputValue} type="text" name="name"/>
           <br/>
-          <label htmlFor="name"> Todo Description: </label>
-          <input onChange={handleTodoDescriptionChange} value={todoDescriptionInputValue} type="text" name="name"/>
+          <label htmlFor="description"> Todo Description: </label>
+          <input onChange={handleTodoDescriptionChange} value={todoDescriptionInputValue} type="text" name="description"/>
           <br/>
           </div>
 
 
-        <button onClick={addNewTodo}>Add</button>
+        <button id="add-button" onClick={addNewTodo}>Add</button>
 
       </form>
 

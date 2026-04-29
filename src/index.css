@@ -14,9 +14,18 @@ div {
 #NavbarStyle {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content:space-between;
   padding: 20px;
-  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#NavbarStyle a {
+  color: rgb(7, 85, 64);;
+  text-decoration: none;
+  font-size: 20px;
+  font-size: larger;
+  font-style:italic;
+  font-weight: bold;
 }
 
 :root {
@@ -104,7 +113,9 @@ div {
   flex: 1;
   padding: 20px;
   position: relative;
+  margin: 0 auto;
 }
+
 
 /*Ul Design */
 /*..............................*//*..............................*/
@@ -177,3 +188,53 @@ ul li.checked::before {
   margin: 5px;
 }
 
+.add-form {
+  background-color: rgb(7, 172, 172);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly;
+  padding: 20px;
+
+}
+
+#add-button {
+  background-color: rgb(10, 125, 106);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+#delete-btn , #edit-button , #save-button {
+  background-color: rgb(10, 125, 106);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-details {
+  background-color: rgb(7, 172, 172);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:normal;
+  justify-content:space-evenly;
+  padding: 20px;
+}
+
+.edit-form {
+  background-color: rgb(7, 172, 172);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly;
+  padding: 20px;
+  
+}

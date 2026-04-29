@@ -17,6 +17,7 @@ import Badge from 'react-bootstrap/Badge';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import dataInfo from "./data/data.json"
+import HomePage from "./pages/HomePage";
 
 
 function App() {
@@ -32,12 +33,13 @@ function App() {
             <Route path={"/about"} element={<AboutPage />} />
             <Route path={"/user-list"} element={<DashboardPage stateData={stateData} setStateData={setStateData} />} />
             <Route path={"/pages/:index"} element={<ItemDetailsPage  stateData={stateData} setStateData={setStateData} />} />
+            <Route path={"/"} element={<HomePage />} />
             {/* <Route path={"*"} element={<NotFoundPage />} /> */}
           </Routes>
           {/* <aside className="sidebar">
           <Sidebar />
           </aside> */}
-
+          
           <Footer />
         </main>
       </div>
