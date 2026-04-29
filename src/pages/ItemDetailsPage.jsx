@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function ItemDetailsPage(props) {
@@ -8,12 +8,14 @@ function ItemDetailsPage(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(foundTodo.task);
   const [description, setDescription] = useState(foundTodo.description);
+ const [checked,setChecked]=useState(foundTodo.completed)
 
   const handleUpdate = () => {
     setIsEditing(false);
     const clone = structuredClone(props.stateData)
     clone[params.index].task = title
     clone[params.index].description = description
+    clone[params.index].completed = checked
     props.setStateData(clone) 
     console.log(clone[params.index])
   };
@@ -46,6 +48,13 @@ function ItemDetailsPage(props) {
             onChange={(e) => setDescription(e.target.value)}
             name="description"
           />
+          <label htmlFor="checked"> completed </label>
+          <input
+              type="checkbox"
+              checked={checked}
+              onChange={(e) => setChecked(e.target.checked)}
+              name="checked"
+            />
           <button id="save-button" onClick={handleUpdate}>Save</button>
         </div>
       ) : (
